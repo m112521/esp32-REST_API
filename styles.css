@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(231, 87, 87);
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+li {
+    color: yellow;
+}
+
+#my-item {
+    color:rgb(149, 58, 235);
+}
