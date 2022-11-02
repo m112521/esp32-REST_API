@@ -15,7 +15,13 @@ IPAddress subnet(255, 255, 255, 0);
 StaticJsonDocument<250> jsonDocument;
 char buffer[250];
 
+const int photoPin = 34;
+const int ledPinR = 35;
+const int ledPinG = 32;
+const int ledPinB = 33;
+
 int sensor = 0;
+int threshold = 0;
 
 void connectToWiFi() {
   Serial.print("Connecting to ");
@@ -54,7 +60,6 @@ void create_json(int s1) {
 }
 
 void getSensor() {
-  //Serial.println("Get sensor");
   create_json(sensor);
   server.send(200, "application/json", buffer);
 }
@@ -67,18 +72,18 @@ void handlePost() {
   deserializeJson(jsonDocument, body);
   
   // Get RGB components
-  int red = jsonDocument["red"];
-  int green = jsonDocument["green"];
-  int blue = jsonDocument["blue"];
-  Serial.print("Red: ");
-  Serial.print(red);
+  threshold = jsonDocument["threshold"];
+  //int green = jsonDocument["green"];
   
-  // Respond to the client
   server.send(200, "application/json", "{}");
 }
 
 void setup() {
   Serial.begin(9600);  
+
+  pinMode(ledPinR, OUTPUT);
+  pinMode(ledPinG, OUTPUT);
+  pinMode(ledPinB, OUTPUT);
 
   connectToWiFi();  
   setup_routing();
@@ -90,7 +95,19 @@ void setup() {
 void loop() {
   server.handleClient();
   
-  sensor = sensor + 1;
+  sensor = analogRead(photoPin);
+  
+  if (sensor < threshold) {
+    digitalWrite(ledPinR, 255);
+    digitalWrite(ledPinG, 255);
+    digitalWrite(ledPinB, 255);
+  }
+  else {
+    digitalWrite(ledPinR, LOW);
+    digitalWrite(ledPinG, LOW);
+    digitalWrite(ledPinB, LOW);
+  }
+  
   //Serial.println(sensor);  
   //Serial.println("A: " + String(ax) + " " + String(ay) + " " + String(az));
     

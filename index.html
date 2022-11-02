@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -8,10 +8,10 @@
     <body>
         <h1>This is title</h1>
         <input id="cp" type="color"/>
-        <input id="sr" type="range" min="30" max="500"/>
-        <button id="btn">Click me</button>
+        <input id="sr" type="range" min="0" max="4096"/><label id="slider-num"></label>
+        <button id="btn">Get sensor value</button>
 
-        <button id="led-btn">LED On</button>
+        <button id="led-btn">Update threshold</button>
     </body>
     <script src="script.js"></script>
 </html>

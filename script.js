@@ -1,5 +1,12 @@
 let button = document.querySelector("#btn")
 let ledBtn = document.querySelector("#led-btn")
+let slider = document.querySelector("#sr")
+let h1 = document.querySelector("h1")
+let sliderNum = document.querySelector("#slider-num")
+
+slider.addEventListener('change', e => {
+    sliderNum.innerHTML = slider.value;
+})
 
 button.addEventListener('click', e => {
     // let bg = document.querySelector('body')
@@ -8,8 +15,8 @@ button.addEventListener('click', e => {
     // let picker = document.querySelector("#cp");
     // bg.style.background = picker.value;
 
-    // let slider = document.querySelector("#sr");
-    // let h1 = document.querySelector("h1");
+
+    // 
     // h1.style.fontSize = slider.value;
 
     fetch("http://10.0.0.8:80/sensor").then((response) => {
@@ -17,6 +24,7 @@ button.addEventListener('click', e => {
     })
     .then((data) => {
         console.log(data);
+        h1.innerHTML = data.sensor;
     });
 })
 
@@ -36,7 +44,7 @@ async function postData(url = '', data = {}) {
 
 
 ledBtn.addEventListener('click', e => {
-    postData("http://10.0.0.8:80/led", { "red": 42 })
+    postData("http://10.0.0.8:80/led", { "threshold": slider.value })
         .then((data) => {
           console.log(data); // JSON data parsed by `data.json()` call
     });
