@@ -1,5 +1,12 @@
 # esp32-REST_API!
 
+Instructions/issues:
+0. Add esp32 to Arduino IDE: https://dl.espressif.com/dl/package_esp32_index.json
+1. Install usb-uart driver.
+2. On uploading code hold BOOT button on ESP.
+3. After upload reconnect USB.
+
+
 ![esp](esp.jpg)
 
 Follow these steps:
