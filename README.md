@@ -2,7 +2,7 @@
 
 Web Interface for ESP32 control:
 
-![web](web_interface.jpg)
+![web](web_interface.png)
 
 
 Hardware wiring:
