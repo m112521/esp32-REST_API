@@ -1,10 +1,13 @@
 body {
     background-color: rgb(231, 87, 87);
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
     font-family: 'Roboto', sans-serif;
-    color: white;
+    color: #bc0d0d;
+    margin-bottom: 3rem;
+    font-weight: bold;
 }
 
 li {
@@ -13,4 +16,82 @@ li {
 
 #my-item {
     color:rgb(149, 58, 235);
+}
+
+
+.main {
+    padding: 3rem;
+}
+
+.picker-container {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e28288;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.picker-container>div {
+    margin-bottom: 1rem;
+}
+
+.threshol-slider-container {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e28288;
+    border-radius: 5px;
+}
+
+/* .threshol-slider-container>div {
+    margin-bottom: 1rem;
+}  */
+
+.set-val-btn, .get-val-btn  {
+    border: none;
+    background-color: #defc13;
+    border-radius: 4px;
+    padding: 1rem 2rem 1rem 2rem;
+    width: 15rem;
+    
+}
+
+.get-val-btn {
+    background-color: #6529ef;
+    color: white;
+}
+
+
+.set-val-btn:hover, .get-val-btn:hover  {
+    background-color: rgb(226, 226, 226);
+    cursor: pointer;
+    color: rgb(94, 90, 90);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.sensor-val {
+    width: 50%;
+    text-align: center;
+    font-size: 3rem;
+    background: #f5b5b5;
+    padding: 1rem;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.sensor-div {
+    padding: 1rem;
+}
+
+.slider {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.label {
+    color: #ffe6e6;
 }

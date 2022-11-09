@@ -4,14 +4,41 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css"/>
+        <title>ESP32</title>
     </head>
     <body>
-        <h1>This is title</h1>
-        <input id="cp" type="color"/>
-        <input id="sr" type="range" min="0" max="4096"/><label id="slider-num"></label>
-        <button id="btn">Get sensor value</button>
+        <div class="main">
+            <h1>ESP32 periphery control</h1>
+            
+            <div class="picker-container">
+                <div>
+                    <label class="label">LED color:</label>
+                    <input id="cp" type="color"/>
+                </div>
+                
 
-        <button id="led-btn">Update threshold</button>
+                <button id="led-btn" class="set-val-btn">Set RGB LED color</button>
+            </div>
+            
+            <div class="threshol-slider-container">
+                <div class="flex-container">
+                    <div class="sensor-div">
+                        <input id="sr" class="slider" type="range" min="0" max="4096" value="0"/>
+                        <br/>
+                        <button id="btn" class="get-val-btn">Get sensor value</button>
+                    </div>
+                    <div class="sensor-val">
+                        <label id="slider-num">0</label>
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+            
+            
+        </div>
     </body>
     <script src="script.js"></script>
 </html>
