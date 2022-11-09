@@ -1,4 +1,11 @@
-# esp32-REST_API!
+# esp32-REST_API
+
+Web Interface for ESP32 control:
+
+![web](web_interface.jpg)
+
+
+Hardware wiring:
 
 ![esp](esp.jpg)
 
