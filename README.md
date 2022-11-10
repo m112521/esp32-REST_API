@@ -11,4 +11,4 @@ Hardware wiring:
 
 Follow these steps:
 
-![assembly](https://user-images.githubusercontent.com/85460283/199716977-d212d03a-50b4-4cee-9fca-b8ade1794599.png)
+![assembly](https://user-images.githubusercontent.com/85460283/201080956-31c3de98-9f4a-4742-a599-b3c4abbf8113.png)
