@@ -1,25 +1,27 @@
-let button = document.querySelector("#btn")
-let ledBtn = document.querySelector("#led-btn")
-let slider = document.querySelector("#sr")
-let h1 = document.querySelector("h1")
-let sliderNum = document.querySelector("#slider-num")
+let button = document.querySelector("#btn");
+let ledBtn = document.querySelector("#led-btn");
+let slider = document.querySelector("#sr");
+let h1 = document.querySelector("h1");
+let sliderNum = document.querySelector("#slider-num");
+let picker = document.querySelector("#cp");
 
+const URL = "http://192.168.31.234:80";
+
+function hexToRgb(hex) {
+    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+}
+  
 slider.addEventListener('change', e => {
     sliderNum.innerHTML = slider.value;
 })
 
 button.addEventListener('click', e => {
-    // let bg = document.querySelector('body')
-    
-
-    // let picker = document.querySelector("#cp");
-    // bg.style.background = picker.value;
-
-
-    // 
-    // h1.style.fontSize = slider.value;
-
-    fetch("http://10.0.0.8:80/sensor").then((response) => {
+    fetch( `${URL}/sensor`).then((response) => {
         return response.json();
     })
     .then((data) => {
@@ -44,7 +46,9 @@ async function postData(url = '', data = {}) {
 
 
 ledBtn.addEventListener('click', e => {
-    postData("http://10.0.0.8:80/led", { "threshold": slider.value })
+    let rgb = hexToRgb(picker.value);
+    console.log(rgb)
+    postData(`${URL}/led`, { "threshold": slider.value, "R": rgb.r, "G": rgb.g, "B": rgb.b})
         .then((data) => {
           console.log(data); // JSON data parsed by `data.json()` call
     });
