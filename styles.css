@@ -1,13 +1,14 @@
 body {
-    background-color: rgb(231, 87, 87);
+    background-color: rgb(25 15 55);
     font-family: 'Roboto', sans-serif;
 }
 
 h1 {
     font-family: 'Roboto', sans-serif;
-    color: #bc0d0d;
+    color: #ffffff;
     margin-bottom: 3rem;
     font-weight: bold;
+    font-size: 60px;
 }
 
 li {
@@ -26,19 +27,18 @@ li {
 .picker-container {
     margin-top: 1rem;
     margin-bottom: 2rem;
-    border: 1px solid #e28288;
+    border: 1px solid #53527c;
     border-radius: 5px;
-    padding: 1rem;
 }
 
-.picker-container>div {
+/* .picker-container>div {
     margin-bottom: 1rem;
-}
+} */
 
 .threshol-slider-container {
     margin-top: 1rem;
     margin-bottom: 2rem;
-    border: 1px solid #e28288;
+    border: 1px solid #53527c;
     border-radius: 5px;
 }
 
@@ -48,16 +48,17 @@ li {
 
 .set-val-btn, .get-val-btn  {
     border: none;
-    background-color: #defc13;
+    background-color: #51ec28;
     border-radius: 4px;
     padding: 1rem 2rem 1rem 2rem;
     width: 15rem;
-    
+    margin-top: 2rem;
 }
 
 .get-val-btn {
     background-color: #6529ef;
     color: white;
+    margin-top: 0rem;
 }
 
 
@@ -76,7 +77,9 @@ li {
 
 .sensor-val {
     width: 50%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 3rem;
     background: #f5b5b5;
     padding: 1rem;

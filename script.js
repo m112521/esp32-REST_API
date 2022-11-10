@@ -1,11 +1,11 @@
 let button = document.querySelector("#btn");
 let ledBtn = document.querySelector("#led-btn");
 let slider = document.querySelector("#sr");
-let h1 = document.querySelector("h1");
+let sensorVal = document.querySelector("#sensor-val");
 let sliderNum = document.querySelector("#slider-num");
 let picker = document.querySelector("#cp");
 
-const URL = "http://192.168.31.234:80";
+const URL = "http://192.168.31.210:80";
 
 function hexToRgb(hex) {
     let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -21,13 +21,25 @@ slider.addEventListener('change', e => {
 })
 
 button.addEventListener('click', e => {
-    fetch( `${URL}/sensor`).then((response) => {
-        return response.json();
-    })
-    .then((data) => {
-        console.log(data);
-        h1.innerHTML = data.sensor;
-    });
+    // fetch( `${URL}/sensor`).then((response) => {
+    //     return response.json();
+    // })
+    // .then((data) => {
+    //     console.log(data);
+    //     sensorVal.innerHTML = data.sensor;
+    // });
+
+    // continuos update
+    setInterval(()=> {
+        fetch( `${URL}/sensor`).then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            //console.log(data);
+            sensorVal.innerHTML = data.sensor;
+        });
+    }, 1000);
+
 })
 
 async function postData(url = '', data = {}) {

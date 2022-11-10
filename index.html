@@ -10,31 +10,41 @@
         <div class="main">
             <h1>ESP32 periphery control</h1>
             
-            <div class="picker-container">
-                <div>
-                    <label class="label">LED color:</label>
-                    <input id="cp" type="color"/>
-                </div>
-                
-
-                <button id="led-btn" class="set-val-btn">Set RGB LED color</button>
-            </div>
             
             <div class="threshol-slider-container">
                 <div class="flex-container">
                     <div class="sensor-div">
-                        <input id="sr" class="slider" type="range" min="0" max="4096" value="0"/>
-                        <br/>
                         <button id="btn" class="get-val-btn">Get sensor value</button>
                     </div>
                     <div class="sensor-val">
-                        <label id="slider-num">0</label>
+                        <label id="sensor-val">0</label>
                     </div>
                     
                 </div>
                 
                 
             </div>
+
+
+            <div class="picker-container">
+                <div class="flex-container">
+                    <div class="sensor-div">
+                        <input id="sr" class="slider" type="range" min="0" max="4096" value="0"/>
+                        <input id="cp" type="color"/>
+                        <br/>
+                        <button id="led-btn" class="set-val-btn">Set RGB color and threshold</button>
+                    </div>
+                    <div class="sensor-val">
+                        <label id="slider-num">0</label>
+                    </div>
+                    <!-- <label class="label">LED color:</label> -->
+                    
+                </div>
+                
+            </div>
+
+
+            
             
             
             
