@@ -4,9 +4,6 @@ Web Interface for ESP32 control:
 
 ![web](web_interface.PNG)
 
-
-Hardware wiring:
-
 Instructions/issues:
 
 0. Add esp32 to Arduino IDE: https://dl.espressif.com/dl/package_esp32_index.json
@@ -14,6 +11,8 @@ Instructions/issues:
 2. On uploading code hold BOOT button on ESP.
 3. After upload reconnect USB.
 
+
+Hardware wiring:
 
 ![esp](esp.jpg)
 
